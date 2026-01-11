@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+</head>
+<body>
+
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding"
+     style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+
+
+  <a href="javascript:void(0)"
+     onclick="w3_close()"
+     class="w3-button w3-hide-large w3-display-topleft"
+     style="width:100%;font-size:22px">Close Menu</a>
+
+
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>Sam Fulham's<br>ALT report</b></h3>
+  </div>
+
+
+  <div class="w3-bar-block">
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+    <a href="#meeting-brief" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Meeting the brief</a>
+    <a href="#investigation" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Investigation</a>
+    <a href="#plan-design" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Plan and design</a>
+    <a href="#create" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Create</a>
+    <a href="#evaluation" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Evaluation</a>
+    <a href="#references" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">References</a>
+    <a href="#summary word count" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Summary word count</a>
+  </div>
+</nav>
+
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Sam's ALT report</span>
+</header>
+
+
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" id="myOverlay"></div>
+
+
+<!-- PAGE CONTENT -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+
+  <!-- Meeting the brief -->
+  <div class="w3-container" id="meeting-brief" style="margin-top:80px">
+    <h1 class="w3-jumbo"><b>Leaving Cert ALT 2026</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b>Meeting the brief.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+  </div>
+
+
+  <!-- Investigation -->
+  <div class="w3-container" id="investigation" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Investigation.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Forests are vital ecosystems that help regulate the climate, store carbon, support biodiversity and maintain natural water cycles. Through my research, I learned that climate change has increased the frequency of droughts, which greatly raises the risk of forest fires. One of the most important factors affecting wildfire risk is soil moisture. When soil and vegetation become dry, fires can start more easily and spread much faster, leading to severe damage to forests, wildlife habitats and nearby communities.
+      I researched existing forest monitoring and fire prevention systems and found that many use sensor networks to collect environmental data such as soil moisture, temperature and rainfall. These systems are often part of Internet of Things (IoT) solutions that allow real-time monitoring and early fire warnings. I also examined automated irrigation systems used in agriculture and greenhouses, which reduce water waste by only activating when soil moisture falls below a set threshold. These systems helped shape the design of my project.
+      Based on my research, I decided to investigate the relationship between water usage and forest fire risk by focusing on soil moisture levels. I chose soil moisture because it is a reliable indicator of drought conditions and can be measured easily using an analogue moisture sensor included in my greenhouse kit. To simulate drought conditions similar to those in forests during long dry periods, I limited the amount of water available to the system. This allowed me to observe how reduced water usage causes soil moisture levels to drop and increases simulated fire risk.
+      I also decided to include an adaptive response in my system. When soil moisture falls below a predefined safe level, a water pump is activated automatically to simulate rainfall or irrigation. If water usage is restricted and soil moisture remains low, the system displays a high fire risk using visual alerts. This reflects how real-world forest fire warning systems respond to dangerous environmental conditions.
+      Overall, my research showed me that effective water management is essential in reducing the risk of forest fires. By modelling drought conditions and water usage using a small-scale greenhouse system, my project demonstrates how embedded systems and computer-based models can be used to monitor environmental conditions, predict wildfire risk and support better decision-making in forest and climate management.
+      </p>
+  </div>
+
+
+  <!-- Plan and design -->
+  <div class="w3-container" id="plan-design" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Plan and design.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Plan and design content here.</p>
+  </div>
+
+
+  <!-- Create -->
+  <div class="w3-container" id="create" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Create.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Create content here.</p>
+  </div>
+
+
+  <!-- Evaluation -->
+  <div class="w3-container" id="evaluation" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Evaluation.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Evaluation content here.</p>
+  </div>
+
+
+  <!-- References -->
+  <div class="w3-container" id="references" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>References.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>References content here.</p>
+  </div>
+
+
+  <!-- Summary -->
+  <div class="w3-container" id="summary" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Summary & Word Count.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Summary text here.</p>
+    <p><b>Word count:</b> XXXX</p>
+  </div>
+
+
+</div>
+
+
+<!-- Footer -->
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px">
+  <p class="w3-right">Powered by w3.css</p>
+</div>
+
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+
+</body>
+</html>
+
+
