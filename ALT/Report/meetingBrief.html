@@ -47,7 +47,7 @@ style="width:100%;font-size:22px">Close Menu</a>
         .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
         .w3-half img:hover{opacity:1}
         </style>
-    <h2> Basic Requirments</h2>
+    <h3 class="w3-padding-64"><b>Basic Requirments</b></h3>
     <style>
       table,
       th,
@@ -84,6 +84,53 @@ style="width:100%;font-size:22px">Close Menu</a>
               <td>Process simulation
                 Configure your embedded system to simulate a real-world process related to the theme (for example: canopy cover, drought cycles, biodiversity changes, population growth/decline, wildfire risk).
                 Run tests to show how the system responds using different inputs or changing environmental data.</td>
+              <td>hold</td>
+          </tr>
+      </table>
+      <div class="w3-container">
+        <h3 class="w3-padding-64"><b>Advanced Requirments</b></h3>
+      </div>
+    <style>
+      table,
+      th,
+      td {
+          border: 1px solid black;
+          border-collapse: collapse;
+      }
+      th,
+      td {
+          padding: 20px;
+      }
+      </style>
+  </head>
+  <body>
+      <table style="width:100%">
+          <tr>
+              <th>Requirments</th>
+              <th>Requirments Met?</th>
+          </tr>
+          <tr>
+              <td><b>Disaster risk modelling:</b>
+                Using Python, develop a computer model of a chosen disaster risk scenario related to forests (for example: wildfire, drought, pest outbreak, air quality, landslides, flooding).
+                Your model must use some data collected from your embedded system and can be combined with open-source data or simulated data.</td>
+              <td>hold</td>
+          </tr>
+          <tr>
+              <td><b>What-if simulations:</b>
+                Explore how your forest disaster risk model behaves under different conditions by creating and testing two "what-if" scenario simulations. Each scenario should involve changing one or more key variables and observing the resulting changes in system behaviour or predicted risk.
+                Examples:
+                What if temperature increases (drought conditions)?
+                What if rainfall decreases (drought conditions)?
+                What if tree density increases (afforestation)?
+                What if the forest canopy is reduced (deforestation)?
+                What if a species population grows too large or too small (for example: too many predators or too few pollinators)?
+                What if high temperatures and low soil moisture increase wildfire risk?</td>
+              <td>hold</td>
+          </tr>
+          <tr>
+              <td><b>Adaptive system:</b>
+                Extend your system to include a feedback mechanism that enables it to adapt automatically to changing conditions (for example: triggering an alert when fire risk is high, watering a plant when soil moisture is too low, or adjusting predictions based on the most recent data).
+                Note that the adaptive response can be either physical (extending the embedded system) or virtual (changing the model so that it adjusts automatically).</td>
               <td>hold</td>
           </tr>
       </table>
