@@ -3,14 +3,12 @@ from datetime import datetime
 import time
 
 
-ser = serial.Serial("COM19", 115200)
+ser = serial.Serial("COM14", 115200)
 time.sleep(3)
 
 
 with open("log.csv", "w") as file:
-    file.write("Timestamp, lightIntensity, soilMoisture, temperture\n")
-values = line.split(line)
-Time == (values[0])
+    file.write("Flame, Temperature, soilMoisture\n")
 while True:
     line = ser.readline().decode().strip()
     timestamp = datetime.now().strftime("%H:%M:%S")
