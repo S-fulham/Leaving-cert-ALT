@@ -9,6 +9,7 @@
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
 body {font-size:16px;}
+body {padding-bottom: 100px;}
 .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
 .w3-half img:hover{opacity:1}
 </style>
@@ -62,10 +63,88 @@ body {font-size:16px;}
   <div class="w3-container" id="investigation" style="margin-top:75px">
     <h1 class="w3-xxxlarge w3-text-red"><b>Investigation.</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p> TEST Forests are incredibly important ecosystems. They help regulate the climate, store carbon, support biodiversity, and maintain natural water cycles. Through my research, I discovered that climate change has increased the frequency and severity of droughts, which significantly raises the risk of forest fires. One of the key factors influencing wildfire risk is soil moisture. When soil and vegetation become dry, fires can ignite more easily and spread much faster, causing serious damage to forests, wildlife habitats, and nearby communities.
-      While researching forest monitoring and fire prevention systems, I found that many rely on sensor networks to collect environmental data such as soil moisture, temperature, and rainfall. These systems are often part of Internet of Things (IoT) technologies, which enable real-time monitoring and early fire warnings. I also explored automated irrigation systems used in agriculture and greenhouses. These systems reduce water waste by activating only when soil moisture drops below a certain level. Learning about these technologies helped shape the design of my own project.
-      Based on this research, I decided to investigate the relationship between water usage and forest fire risk by focusing on soil moisture levels. I chose soil moisture because it is a reliable indicator of drought conditions and can be easily measured using the analogue moisture sensor included in my greenhouse kit. To simulate drought conditions similar to those experienced in forests during extended dry periods, I restricted the amount of water available to the system. This allowed me to observe how reduced water supply leads to lower soil moisture and an increased simulated fire risk.
-      I also built an adaptive response into my system. When soil moisture drops below a predefined safe level, a water pump automatically activates to simulate rainfall or irrigation. However, if water usage is limited and soil moisture remains low, the system signals a high fire risk through visual alerts. This mirrors how real-world forest fire warning systems respond to dangerous environmental conditions.
-      Overall, my research reinforced the importance of effective water management in reducing wildfire risk. By modelling drought conditions and water usage in a small-scale greenhouse system, my project demonstrates how embedded systems and computer-based models can be used to monitor environmental changes, anticipate wildfire risk, and support more informed decision-making in forest and climate management.
+    <p> For my coursework, I researched many types of forest disasters such as flooding, fire and diesease. I started by making a list of all possible forest disaster scenarios on a mind map.
       </p>
+  <img src="Colorful Business Concept Plan Mind Map.png" width="1500" height="1000"><br>
+  <h3><b>Existing disaster/forest monitoring systems:</b></h3>
+  <style>
+      table,
+      th,
+      td {
+          border: 1px solid black;
+          border-collapse: collapse;
+      }
+      th,
+      td {
+          padding: 20px;
+      }
+      </style>
+<table style="width:100%">
+    <table style="width:100%">
+<tr>
+  <th>Systems</th>
+  <th>Sensors</th>
+  <th>How it Works</th>
+  <th>Advantages</th>
+  <th>Disadvantages</th>
+</tr>
+
+<tr>
+  <td>Silvanet Wildfire Detection System (Dryad)</td>
+  <td>Gas sensors (detect carbon monoxide, hydrogen, hydrocarbons)<br>
+      Environmental sensors (temperature, humidity)</td>
+  <td>Small sensors are attached to trees throughout the forest. They detect gases produced in the early stages of a fire. If abnormal gases are detected, the system sends an alert to the cloud and emergency services.</td>
+  <td>Detects fires very early before flames spread. Sensors are small and low-cost. AI improves detection accuracy over time</td>
+  <td>Requires many sensors to cover large forests. Sensors need power and maintenance</td>
+</tr>
+
+<tr>
+  <td>Smart Forest Flood Monitoring System (River Level Monitoring)</td>
+  <td>Water level sensors
+      Rainfall sensors
+      Soil moisture sensors</td>
+  <td>Sensors are placed near rivers and forest soil. They measure rainfall, soil moisture, and water levels. If levels rise too high, the system sends warnings to authorities to prepare for flooding.</td>
+  <td>Helps predict floods before they occur
+      Protects forest ecosystems and nearby communities
+      Provides continuous environmental data</td>
+  <td>Sensors can be damaged by extreme weather
+      Requires power and internet connectivity</td>
+</tr>
+
+<tr>
+  <td>Global Ecosystem Dynamics Investigation (GEDI) – Satellite Forest Monitoring System</td>
+  <td>LiDAR (Light Detection and Ranging) laser sensor</td>
+  <td>The GEDI system is mounted on the International Space Station. It sends laser pulses toward Earth and measures the light that reflects back from trees. This allows scientists to measure forest height, biomass, and forest structure, helping monitor deforestation and carbon storage.</td>
+  <td>Can measure forests across the entire planet
+      Produces very detailed 3D maps of forest structure
+      Helps scientists understand deforestation and carbon storage</td>
+  <td>Data must be processed by scientists before use
+      Satellites are expensive to build and launch</td>
+</tr>
+
+</table>
+<h3><b>Dangers to Forests:</b></h3>
+    I researched the main dangers sourcses to forests and and found these to be the main factors: <img src="Screenshot forest.png" style = "float:right;  margin-right:1250px; " ><br>
+      <ul>
+      <li>Over 25,000 hectares of ash forests are estimated to be affected by ash dieback in the Republic of Ireland, as of April 2024.</li> 
+      <li>Following Storm Éowyn in early 2025, over 26,000 hectares of forestry were reported as damaged or destroyed. </li>
+      <li>In 2023 wildfires destroyed 5,000 hectares of land.</li>
+      <li>Based on data from 2015–2020, the official rate of deforestation in Ireland (permanent removal of forest for other land use) was approximately 620 hectares per year. 
+    </ul>
+    I also researched nearby forest locations and found that the nearest forest to me is in an area known as Buffanoky between Cappamore and Doon, and over 5000 hectares were damaged in a fire in 2021.<br><br>
   </div>
+  <h3><b>Evaluation</b></h3>
+  From my research, I’ve found that:<br>
+- Most fire risk systems focus on Temperature, Humidity and Soil Moisture sensors.<br>
+- Some systems have software to identify false alarms.<br>
+- Most systems are small, low power devices that hang on trees or a placed elsewhere in a forest<br>
+- Satellite imagery can’t detect smoke from small fires<br><br>
+You can see from my research and the Pie chart above that <b>forest fires</b> was one of the top
+causes of deforestation. Based on this research finding, I’ve chosen <b>forest fires</b> as the risk
+that I will measure for my project.<br>
+From my research of existing systems, I’ve found that Most systems focus on
+Temperature, Soil Moisture, Flame and VOC sensors (smoke)”, therefore, I’ve chosen to use
+Temperature, Soil Moisture, Flame as my main variables and sensors. I didn’t use VOC because
+those sensors are harder to find and need a 12V power supply.
+</body>
+</html>
