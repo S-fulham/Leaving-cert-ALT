@@ -8,7 +8,7 @@ time.sleep(3)
 
 
 with open("log.csv", "w") as file:
-    file.write("Flame, Temperature, soilMoisture, airHumidity\n")
+    file.write("Timestamp, soilMoisture, Temperature,  Flame, airHumidity\n")
 while True:
     line = ser.readline().decode().strip()
     timestamp = datetime.now().strftime("%H:%M:%S")
