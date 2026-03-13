@@ -1,6 +1,4 @@
-##  ADD A PAST FOREST THAT U COMPARE AGAINTS THE CURRENT ONE TO SEE IF ANYTHING CHANGES IF NOTHING CHANGES BREAK THE MODEL
-
-# imports all the libaryies I need
+# imports all the libairy I need
 import random
 import time
 import copy
@@ -20,6 +18,7 @@ soilMoisture = 0
 airHumidity = 0
 moistureLevel = 0
 
+# gets values from the sensors they're returned in list so I have to strip them to get the values to run the model
 def getValues():
     line = ser.readline().decode().strip()
     parts = line.split(",")
