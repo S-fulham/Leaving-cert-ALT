@@ -24,23 +24,9 @@ def getValues():
     parts = line.split(",")
     soilMoisture = int(parts[0])
     Temperature = int(parts[1])
-    Flame = int(parts[2])
     airHumidity = int(parts[3])
+    return  Temperature, airHumidity, soilMoisture
 
-    return Flame, Temperature, airHumidity, soilMoisture
-tempurture = Temperature
-realFire = 0
-
-realFire += (Temperature / 40) * 0.4 
-realFire += (1 - airHumidity / 100) * 0.3  
-realFire += (1 - soilMoisture / 100) * 0.3  
-realFire = max(0, min(realFire, 1))
-
-print("Fire risk (0-1):", realFire)
-# IF TEMP IS ABOVE 30 DEGREES CELSIUS WHICH IUS THE DANGER ZONE FOR FIRES THE MOSTURE LEVEL IS REDUCED (I WANT TO MAKE THIS CHANGE THE FIRE CHANCE NOT THE MOISUTE LEVEL BECAUSE THE MOISTURE LEVEL ISNT ACTUALLY CHANGING THE CHANCE OF FORE IS JUST INCREASING)
-#
-if tempurture > 30:
-    moistureLevel *= 0.9
 
 #prints the forest
 def printForest(forest):
