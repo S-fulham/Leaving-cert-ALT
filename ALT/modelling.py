@@ -29,8 +29,14 @@ def getValues():
 
     return Flame, Temperature, airHumidity, soilMoisture
 tempurture = Temperature
-realFire = 1 - (moistureLevel)
+realFire = 0
 
+realFire += (Temperature / 40) * 0.4 
+realFire += (1 - airHumidity / 100) * 0.3  
+realFire += (1 - soilMoisture / 100) * 0.3  
+realFire = max(0, min(realFire, 1))
+
+print("Fire risk (0-1):", realFire)
 # IF TEMP IS ABOVE 30 DEGREES CELSIUS WHICH IUS THE DANGER ZONE FOR FIRES THE MOSTURE LEVEL IS REDUCED (I WANT TO MAKE THIS CHANGE THE FIRE CHANCE NOT THE MOISUTE LEVEL BECAUSE THE MOISTURE LEVEL ISNT ACTUALLY CHANGING THE CHANCE OF FORE IS JUST INCREASING)
 #
 if tempurture > 30:
@@ -61,7 +67,6 @@ forest [HEIGHT//2][WIDTH//2] = "F"
 
 while True:
     Flame, Temperature, soilMoisture, airHumidity = getValues()
-    moistureLevel = soilMoisture/1023
     newForest = copy.deepcopy(forest)
     for x in range (HEIGHT):
         for y in range (WIDTH):
@@ -74,7 +79,12 @@ while True:
                 #calculates the fire chance
                 if any (forest[x][y] == "F" for x,y  in neighbours):
                     fireChance=random.random()
-                    if fireChance > moistureLevel:
+                    realFire = 0
+                    realFire += (Temperature / 40) * 0.4 
+                    realFire += (1 - airHumidity / 100) * 0.3  
+                    realFire += (1 - soilMoisture / 100) * 0.3  
+                    realFire = max(0, min(realFire, 1))   
+                    if fireChance > realFire:
                         newForest[x][y] = "F" 
     if not any("F" in row for row in forest):
         printForest(forest)
@@ -82,11 +92,10 @@ while True:
     #prints the updated forest and sets the new forest to the original one
     printForest(forest)
     forest=newForest
-    print(fireChance)
-    print (moistureLevel)
-    print (Temperature)
-    print (airHumidity)
-    print (Flame)
+    print ("This is the moisture level ", moistureLevel)
+    print ("This is the temperature ",Temperature)
+    print ("This is the air humidity level ",airHumidity)
+    print ("This is the the chance of a fire starting level ",realFire)
 
     #wait one second before printing again
     time.sleep(1)
