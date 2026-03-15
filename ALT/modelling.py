@@ -8,7 +8,7 @@ import serial
 #creats the 2D grid
 WIDTH = 20
 HEIGHT = 20
-forest = [["T" for i in range (HEIGHT)] for i in range(WIDTH)]
+forest = [["🌲" for i in range (HEIGHT)] for i in range(WIDTH)]
 #variables
 ser = serial.Serial("COM14", 115200)
 time.sleep(3)
@@ -49,7 +49,7 @@ def getNeighbours(x,y):
 
 
 #makes the center of the 2D list tree on fire 
-forest [HEIGHT//2][WIDTH//2] = "F"
+forest [HEIGHT//2][WIDTH//2] = "🔥"
 
 while True:
     Flame, Temperature, soilMoisture, airHumidity = getValues()
@@ -57,13 +57,13 @@ while True:
     for x in range (HEIGHT):
         for y in range (WIDTH):
             #sets burning trees to burnt
-            if forest[x][y] == "F":
+            if forest[x][y] == "🔥":
                 newForest[x][y] = "."
             #if the tree isnt on fire the neighbouring trees are checked to see if they are burning, if they are the their is a chance for this one to catch on fire 
-            elif forest [x][y] == "T":
+            elif forest [x][y] == "🌲":
                 neighbours = getNeighbours(x,y)
                 #calculates the fire chance
-                if any (forest[x][y] == "F" for x,y  in neighbours):
+                if any (forest[x][y] == "🔥" for x,y  in neighbours):
                     fireChance=random.random()
                     realFire = 0
                     realFire += (Temperature / 40) * 0.4 
@@ -71,8 +71,8 @@ while True:
                     realFire += (1 - soilMoisture / 100) * 0.3  
                     realFire = max(0, min(realFire, 1))   
                     if fireChance > realFire:
-                        newForest[x][y] = "F" 
-    if not any("F" in row for row in forest):
+                        newForest[x][y] = "🔥" 
+    if not any("🔥" in row for row in forest):
         printForest(forest)
         break
     #prints the updated forest and sets the new forest to the original one

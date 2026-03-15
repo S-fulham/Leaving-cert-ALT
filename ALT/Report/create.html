@@ -387,6 +387,84 @@ padding: 20px;
 <td>Pass</td>
 </tr>
 
+</table>
+
+<h3 class="w3-padding-64">system</h3>
+
+<table style="width:100%">
+
+<tr>
+<th>Test Case</th>
+<th>Test Case Description</th>
+<th>Expected Result</th>
+<th>Actual Result</th>
+<th>Pass/Fail?</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>Test if the forest prints runs.</td>
+<td>When I run the code the forest should print based off the hight and width value.</td>
+<td>The forest prints and the hight and width values are correct.</td>
+<td>Pass</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Test if the forst can be different sizes.</td>
+<td>By changing the height and width values the forest should be different sizes</td>
+<td>The forest prints based on the hight and width values.</td>
+<td>Pass.</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Test if the model runs.</td>
+<td>When the model is ran a fire should start in the center and based on the values read from the system should spread to neighbouring trees.</td>
+<td>The sensor returned 8 when placed in the soil and 70 when placed in water.</td>
+<td>Pass</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>Test if the moisture level affects the fire</td>
+<td>The sensor should read a low/lowest value when placed in completely dry soil and high/highest when placed in water.</td>
+<td>The sensor returned 8 when placed in the soil and 70 when placed in water.</td>
+<td>Pass</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>Test if the air humidity level affects the fire</td>
+<td>The sensor should read a low/lowest value when placed inside in a dry area and high/highest value when placed outside during ahumid day.</td>
+<td>The sensor returned 8 when placed in the soil and 70 when placed in water.</td>
+<td>Pass</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>Test if the temperature affects the fire</td>
+<td>The sensor should read a low/lowest value when placed inside in a dry area and high/highest value when placed outside during ahumid day.</td>
+<td>The sensor returned 8 when placed in the soil and 70 when placed in water.</td>
+<td>Pass</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>Test what happens if temperature is very high 40+ degrees (what if scenario 1)</td>
+<td>The LED's should show red and the pump should turn on</td>
+<td>The LED's flash red and the pump activates.</td>
+<td>Pass</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>Test what happens if soil moisture is very high (what if scenario 2)</td>
+<td>The pump should turn on and remain on until no fire is detected.</td>
+<td>The pump activates and remained on until I removed the fire sensor from the flames.</td>
+<td>Pass</td>
+</tr>
+
 <tr>
 <td>9</td>
 </tr>
