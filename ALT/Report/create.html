@@ -58,6 +58,18 @@ body {font-size:16px;}
   color: white;
   cursor: pointer;
 }
+
+table,
+th,
+td {
+border: 1px solid black;
+border-collapse: collapse;
+}
+
+th,
+td {
+padding: 20px;
+}
 </style>
 </head>
 
@@ -289,29 +301,11 @@ while True:
 
 </section>
 </div>
-
-<style>
-table,
-th,
-td {
-border: 1px solid black;
-border-collapse: collapse;
-}
-
-th,
-td {
-padding: 20px;
-}
-
-</style>
-
-
 </head>
 
 <body>
-
 <h2 class="w3-padding-64"><b>Testing</b></h2>
-<h3 class="w3-padding-64">system</h3>
+<h3>system</h3>
 
 <table style="width:100%">
 
@@ -387,9 +381,9 @@ padding: 20px;
 <td>Pass</td>
 </tr>
 
-</table>
+</table><br>
 
-<h3 class="w3-padding-64">system</h3>
+<h3>model</h3>
 
 <table style="width:100%">
 
@@ -467,20 +461,11 @@ padding: 20px;
 
 <tr>
 <td>9</td>
+<td>Test what happens if a value isnt detected by disconnecting a sensor from the Micro:bit</td>
+<td>The model should use the last read value.</td>
+<td>The model fails to run due to missing sensor</td>
+<td>Fail</td>
 </tr>
-
-<tr>
-<td>10</td>
-</tr>
-
 </table>
-
-<div class="w3-container">
-<h3 class="w3-padding-64"><b>Advanced Requirments</b></h3>
-</div>
-
-</div>
-</div>
-
 </body>
 </html>
