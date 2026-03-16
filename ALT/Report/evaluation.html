@@ -11,6 +11,24 @@ body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
 body {font-size:16px;}
 .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
 .w3-half img:hover{opacity:1}
+        body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+        body {font-size:16px;}
+        body {padding-bottom: 100px;  }
+        .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+        .w3-half img:hover{opacity:1}
+        </style>
+    <h3 class="w3-padding-64"><b>Basic Requirments</b></h3>
+    <style>
+      table,
+      th,
+      td {
+          border: 1px solid black;
+          border-collapse: collapse;
+      }
+      th,
+      td {
+          padding: 20px;
+      }
 </style>
 </head>
 <body>
@@ -62,5 +80,82 @@ body {font-size:16px;}
 <div class="w3-container" id="plan-design" style="margin-top:75px">
     <h1 class="w3-xxxlarge w3-text-red"><b>Evaluation.</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p>evaluation content here</p>
 </div>
+  </head>
+  <body>
+           <table style="width:100%">
+          <tr>
+              <th>Requirments</th>
+              <th>Requirments Met?</th>
+          </tr>
+          <tr>
+              <td>Embedded system design
+                Build a functional embedded system that uses at least one digital input and at least one analogue input.
+                The system must generate at least one primary output which can be either digital or analogue.
+                The system can be started or calibrated manually but should operate automatically once started.</td>
+              <td><b>Yes</b><br><br>
+              <b>Inputs</b><br>
+                <b>-Fire Sensor</b> digital, returns one if no fire detected and 0 if fire detected<br>
+                <b>-Moisture Sensor</b> analogue, returns soil moisure as a percentage.<br><br>
+                <b>Outputs</b><br>
+                <b>-LED</b> digital, LED turns on if soil moisture low<br></td>
+          </tr>
+          <tr>
+              <td>Data collection
+                Use your embedded system to collect and store environmental data that relates to your chosen theme.
+                The stored data will be used as part of your model in the advanced requirements.</td>
+              <td><b>Yes</b><br><br>
+                - My embedded collects and stores temperature, soil moisture and air humidity all of which are used live in my model. (The system also collects and stores flame detection data although it is not used in the model.)</td>
+          </tr>
+          <tr>
+              <td>Process simulation
+                Configure your embedded system to simulate a real-world process related to the theme (for example: canopy cover, drought cycles, biodiversity changes, population growth/decline, wildfire risk).
+                Run tests to show how the system responds using different inputs or changing environmental data.</td>
+              <td><b>Yes</b><br><br>
+                I simulated a drought by taking out the soil moisture sensors and drying it, this system responded by turning on a red LED to let me soil moisture was low and the water pump automaticly activated.</td>
+          </tr>
+      </table>
+      <div class="w3-container">
+        <h3 class="w3-padding-64"><b>Advanced Requirments</b></h3>
+      </div>
+
+  </head>
+  <body>
+      <table style="width:100%">
+          <tr>
+              <th>Requirments</th>
+              <th>Requirments Met?</th>
+          </tr>
+          <tr>
+              <td><b>Disaster risk modelling:</b>
+                Using Python, develop a computer model of a chosen disaster risk scenario related to forests (for example: wildfire, drought, pest outbreak, air quality, landslides, flooding).
+                Your model must use some data collected from your embedded system and can be combined with open-source data or simulated data.</td>
+              <td>Yes - I chose to model wildfire and modeled the chance of a fire starting/spreading based on data gathered from my Microbit and data from online data sets (temperature, moisture level, distance between trees, air humidity)</td>
+          </tr>
+          <tr>
+              <td><b>What-if simulations:</b>
+                Explore how your forest disaster risk model behaves under different conditions by creating and testing two "what-if" scenario simulations. Each scenario should involve changing one or more key variables and observing the resulting changes in system behaviour or predicted risk.
+                Examples:
+                What if temperature increases (drought conditions)?
+                What if rainfall decreases (drought conditions)?
+                What if tree density increases (afforestation)?
+                What if the forest canopy is reduced (deforestation)?
+                What if a species population grows too large or too small (for example: too many predators or too few pollinators)?
+                What if high temperatures and low soil moisture increase wildfire risk?</td>
+              <td>Yes - My model looks at a 2 variables moisture levels (drought conditions) and temperature levels.</td>
+          </tr>
+          <tr>
+              <td><b>Adaptive system:</b>
+                Extend your system to include a feedback mechanism that enables it to adapt automatically to changing conditions (for example: triggering an alert when fire risk is high, watering a plant when soil moisture is too low, or adjusting predictions based on the most recent data).
+                Note that the adaptive response can be either physical (extending the embedded system) or virtual (changing the model so that it adjusts automatically).</td>
+              <td>Yes - My system includes multiple responses depending on the data recieved by the sensors including water pump turning on if fire is detected and not turning off until the fire is no longer detected, water pump turning on for three seconds if moisture level is low, LED turning on if temperature is high. </td>
+          </tr>
+      </table>
+
+
+        <h3 class="w3-padding-64"><b>Improvements That Could Be Made</b></h3>
+        <p>The first improvements I would make is using more acurate sensors, <b>justification</b> this would make the system much more reliable and also improve the model.<br>
+        The second improvements I would make is using taking wind/wind speed into account, <b>justification</b> based on my research I found the wind strenght and speed has a huge affect on how fast and far a fire spreads taking wind into account in my system would greatly improve how useful it is.<br>
+        he final improvements I would make is adding a noise alarm <b>justification</b> currently the model only uses LED's as an alram system which might not always be noticed, a noise alarm would be much easier to notice therefore making the system alot safer.<br>
+        </p>
+    </div>

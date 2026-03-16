@@ -73,19 +73,26 @@ style="width:100%;font-size:22px">Close Menu</a>
                 Build a functional embedded system that uses at least one digital input and at least one analogue input.
                 The system must generate at least one primary output which can be either digital or analogue.
                 The system can be started or calibrated manually but should operate automatically once started.</td>
-              <td>Yes - I used a flame sensor this acted as my digital input that returns either positive or negative depending if there is fire or not</td>
+              <td><b>Yes</b><br><br>
+              <b>Inputs</b><br>
+                <b>-Fire Sensor</b> digital, returns one if no fire detected and 0 if fire detected<br>
+                <b>-Moisture Sensor</b> analogue, returns soil moisure as a percentage.<br><br>
+                <b>Outputs</b><br>
+                <b>-LED</b> digital, LED turns on if soil moisture low<br></td>
           </tr>
           <tr>
               <td>Data collection
                 Use your embedded system to collect and store environmental data that relates to your chosen theme.
                 The stored data will be used as part of your model in the advanced requirements.</td>
-              <td>Yes - My embedded collects and stores data from multiple snesors</td>
+              <td><b>Yes</b><br><br>
+                - My embedded collects and stores temperature, soil moisture and air humidity all of which are used live in my model. (The system also collects and stores flame detection data although it is not used in the model.)</td>
           </tr>
           <tr>
               <td>Process simulation
                 Configure your embedded system to simulate a real-world process related to the theme (for example: canopy cover, drought cycles, biodiversity changes, population growth/decline, wildfire risk).
                 Run tests to show how the system responds using different inputs or changing environmental data.</td>
-              <td>do on momnday using a soil moisture sensor and take it out stimulating a droutgh</td>
+              <td><b>Yes</b><br><br>
+                I simulated a drought by taking out the soil moisture sensors and drying it, this system responded by turning on a red LED to let me soil moisture was low and the water pump automaticly activated.</td>
           </tr>
       </table>
       <div class="w3-container">
@@ -103,7 +110,7 @@ style="width:100%;font-size:22px">Close Menu</a>
               <td><b>Disaster risk modelling:</b>
                 Using Python, develop a computer model of a chosen disaster risk scenario related to forests (for example: wildfire, drought, pest outbreak, air quality, landslides, flooding).
                 Your model must use some data collected from your embedded system and can be combined with open-source data or simulated data.</td>
-              <td>Yes - I chose to model wildfire and modeled the chance of a fire starting/spreading based on data gathered from my Microbit and data from online data sets (temperature, moisture level, distance between trees, air humidity)</td>
+              <td><b>Yes</b> - I chose to model wildfire and modeled the chance of a fire starting/spreading based on data gathered from my Microbit and data from online data sets (temperature, moisture level, distance between trees, air humidity)</td>
           </tr>
           <tr>
               <td><b>What-if simulations:</b>
@@ -115,13 +122,13 @@ style="width:100%;font-size:22px">Close Menu</a>
                 What if the forest canopy is reduced (deforestation)?
                 What if a species population grows too large or too small (for example: too many predators or too few pollinators)?
                 What if high temperatures and low soil moisture increase wildfire risk?</td>
-              <td>Yes - My model looks at a 2 variables moisture levels (drought conditions) and temperature levels.</td>
+              <td><b>Yes</b> - My model looks at a 2 variables moisture levels (drought conditions) and temperature levels.</td>
           </tr>
           <tr>
               <td><b>Adaptive system:</b>
                 Extend your system to include a feedback mechanism that enables it to adapt automatically to changing conditions (for example: triggering an alert when fire risk is high, watering a plant when soil moisture is too low, or adjusting predictions based on the most recent data).
                 Note that the adaptive response can be either physical (extending the embedded system) or virtual (changing the model so that it adjusts automatically).</td>
-              <td>Yes - My system includes multiple responses depending on the data recieved by the sensors including water pump turning on if fire is detected and not turning off until the fire is no longer detected, water pump turning on for three seconds if moisture level is low, LED turning on if temperature is high. </td>
+              <td><b>Yes</b> - My system includes multiple responses depending on the data recieved by the sensors including water pump turning on if fire is detected and not turning off until the fire is no longer detected, water pump turning on for three seconds if moisture level is low, LED turning on if temperature is high. </td>
           </tr>
       </table>
   </div>

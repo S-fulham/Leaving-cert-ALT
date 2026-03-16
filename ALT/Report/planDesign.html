@@ -69,7 +69,7 @@ body {padding-bottom: 100px;  }
     <b>Why did I choose this goal?</b><br>
     - The ability to detect fires early on is something I found on existing systems in my research such as the DRYAD system.<br>
     <b>How will I achieve this?</b><br>
-    - I will use a flame detector sensor which when it detects a fire it will trigger a flashing red LED and turn on a water pump which will run until a fire is no longer detected.<br><br>
+    - I will use a flame detector sensor which when it detects a fire it will trigger a flashing red LED and turn on a water pump which will run until a fire is no longer detected.<br>
 
     <h3 class="w3-padding-20"><b>Design Objective 2</b></h3>
     - Have a visible indicator when something is wrong such as soil moisture being too low.<br>
@@ -77,6 +77,13 @@ body {padding-bottom: 100px;  }
     - Following my investigation on existing systems, I saw visible indicators in nearly all of them, so I decided to add them to mind.<br>
     <b>How will I achieve this?</b><br>
     - I will achieve this by using a an if statement linked to my sensors e.g if soil moisture > 50 LED's start flashing.<br>
+
+        <h3 class="w3-padding-20"><b>Design Objective 3</b></h3>
+    - Have a false alarm detector<br>
+    <b>Why did I choose this goal?</b><br>
+    - Following my investigation on existing systems, I saw most existing solutions had a way of detecting false alarms.<br>
+    <b>How will I achieve this?</b><br>
+    - I will achieve this by either comparing sensor outputs e.g if soil moisture is high but flame sensor is retuning a zero meaning that a fire is sensed or creating a way for the system to not return outliers such as temps above 45 degrees. <br><br>
 
 <style>
     table,
