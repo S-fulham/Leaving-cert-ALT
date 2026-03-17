@@ -9,29 +9,66 @@
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
 body {font-size:16px;}
-body {padding-bottom: 100px;  }
+body {padding-bottom: 100px;}
 .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
 .w3-half img:hover{opacity:1}
+
+.modal img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 20px;
+}
 </style>
 </head>
 <body>
 
-
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding"
      style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
-
 
   <a href="javascript:void(0)"
      onclick="w3_close()"
      class="w3-button w3-hide-large w3-display-topleft"
      style="width:100%;font-size:22px">Close Menu</a>
 
-
   <div class="w3-container">
     <h3 class="w3-padding-64"><b>Sam Fulham's<br>ALT report</b></h3>
   </div>
-
 
   <div class="w3-bar-block">
     <a href="home.html" class="w3-bar-item w3-button w3-hover-white">Home</a>
@@ -45,16 +82,13 @@ body {padding-bottom: 100px;  }
   </div>
 </nav>
 
-
 <!-- Top menu on small screens -->
 <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
   <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
   <span>Sam's ALT report</span>
 </header>
 
-
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" id="myOverlay"></div>
-
 
 <!-- PAGE CONTENT -->
 <div class="w3-main" style="margin-left:340px;margin-right:40px">
@@ -63,7 +97,7 @@ body {padding-bottom: 100px;  }
 <div class="w3-container" id="plan-design" style="margin-top:75px">
     <h1 class="w3-xxxlarge w3-text-red"><b>Plan and design.</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
-<p>
+
     <h3 class="w3-padding-20"><b>Design Objective 1</b></h3>
     - To detect a newly started fire as quickly as possible and have the system automaticly take the necasary ssteps to extinguish it.<br>
     <b>Why did I choose this goal?</b><br>
@@ -78,27 +112,13 @@ body {padding-bottom: 100px;  }
     <b>How will I achieve this?</b><br>
     - I will achieve this by using a an if statement linked to my sensors e.g if soil moisture > 50 LED's start flashing.<br>
 
-        <h3 class="w3-padding-20"><b>Design Objective 3</b></h3>
+    <h3 class="w3-padding-20"><b>Design Objective 3</b></h3>
     - Have a false alarm detector<br>
     <b>Why did I choose this goal?</b><br>
     - Following my investigation on existing systems, I saw most existing solutions had a way of detecting false alarms.<br>
     <b>How will I achieve this?</b><br>
     - I will achieve this by either comparing sensor outputs e.g if soil moisture is high but flame sensor is retuning a zero meaning that a fire is sensed or creating a way for the system to not return outliers such as temps above 45 degrees. <br><br>
 
-<style>
-    table,
-    th,
-    td {
-    border: 1px solid black;
-    border-collapse: collapse;
-    }
-    th,
-    td {
-        padding: 20px;
-        }
-</style>
-    </head>
-<body>
     <table style="width:100%">
         <tr>
             <th>Option</th>
@@ -125,21 +145,9 @@ body {padding-bottom: 100px;  }
             <td>Yes</td>
         </tr>
     </table><br>
+
     <h3 class="w3-padding-20"><b>Stakeholders Needs</b></h3>
-<style>
-    table,
-    th,
-    td {
-    border: 1px solid black;
-    border-collapse: collapse;
-    }
-    th,
-    td {
-        padding: 20px;
-        }
-</style>
-    </head>
-<body>
+
     <table style="width:100%">
         <tr>
             <th>Stakeholders</th>
@@ -162,13 +170,15 @@ body {padding-bottom: 100px;  }
             <td>Climate impact of forest firesk</td>
         </tr>
     </table><br>
+
     <h3 class="w3-padding-20"><b>End User Needs</b></h3>
     <ul>
-    <li>Clear risk indicators.</li> 
-    <li>Reliable predictions. </li>
-    <li>Real-time updates.</li>
-    <li>Low false alarms. </li>
+      <li>Clear risk indicators.</li> 
+      <li>Reliable predictions.</li>
+      <li>Real-time updates.</li>
+      <li>Low false alarms.</li>
     </ul>
+
     <h3 class="w3-padding-20"><b>Technologies Used</b></h3>
     <b>-VS Code:</b> This is a code editor used for programming in many languages including Python. I used it to write and manage the code for my project and to run my Python programs. I chose VS Code because it has useful features like extensions and debugging tools <br>
     <b>-PC</b><br>
@@ -183,6 +193,44 @@ body {padding-bottom: 100px;  }
     <b>-Random Libary</b><br>
     <b>-Time Libary</b><br>
     <b>-Serial</b><br><br>
-    <h3 class="w3-padding-20"><b>Flowchart</b></h3><br>
-    <img src="flow chart.png">
+
+    <h3 class="w3-padding-20"><b>Flowchart</b></h3>
+    <p>click to enlarge, flowchart one is the system and flowchart 2 is the modal.</p>
+
+
+    <div class="image-row">
+        <img src="flow chart.png" width="200" onclick="openImg('flow chart.png')">
+        <img src="Blank diagram.png" width="200" onclick="openImg('Blank diagram.png')">
+    </div>
+
 </div>
+</div>
+
+<div id="modal" class="modal" onclick="closeImg()">
+  <span class="close" onclick="closeImg()">&times;</span>
+  <img id="modalImg">
+</div>
+
+<script>
+function openImg(src){
+  document.getElementById("modal").style.display = "flex";
+  document.getElementById("modalImg").src = src;
+}
+
+function closeImg(){
+  document.getElementById("modal").style.display = "none";
+}
+
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+</body>
+</html>
