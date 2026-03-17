@@ -191,7 +191,7 @@ Early in testing I had an issue getting an acurate reading from the sensors and 
 
 <pre class="snippet"><code>
 
-<img src="Screenshot 2026-03-12 212705.png">
+<img src="microbit blocks.png">
 
 </code></pre>
 
@@ -203,6 +203,30 @@ Early in testing I had an issue getting an acurate reading from the sensors and 
 <div class="text-side">
 
 <p><b>For the model code:</b>
+This model is a forest fire simulation. It uses a 20 by 20 grid to represent a forest, where each tree starts as a normal tree emoji. At the beginning, the tree in the middle is set on fire, and the program then checks whether the fire spreads to nearby trees.
+The model also takes in live sensor readings from the Micro:bit through serial communication. These readings are:<br>
+<ul>
+  <li>Temperature</li>
+  <li>Air humidity</li>
+  <li>Soil moisture</li>
+</ul>  
+These values are used to work out how likely it is that a tree will catch fire.
+The algorithm works in a loop. First, it reads the latest sensor values. Then it goes through every tree in the forest one by one. If a tree is already burning, it becomes burnt in the next step. If a tree is not burning, the program checks its eight neighbouring trees around it. If at least one neighbour is on fire, the program calculates a fire chance.
+The fire chance is a number between 0 and 1. A value closer to 1 means the fire is more likely to spread.<br><br> This is calculated using the sensor data:<br>
+-Higher temperature increases the fire risk<br>
+-Lower air humidity increases the fire risk<br>
+-Lower soil moisture increases the fire risk<br><br>
+The formula gives each factor a weighting:
+Temperature contributes 40%<br>
+Air humidity contributes 30%<br>
+Soil moisture contributes 30%<br><br>
+
+So in simple terms, the model says:<br>
+hotter + drier air + drier soil = higher fire risk<br><br>
+
+After that, the code generates a random number between 0 and 1 and compares it to the calculated fire risk. If the random result matches the condition, the tree catches fire. This adds some realism, because in real life fire spread is not perfectly predictable every time.
+The forest is then updated and printed again so you can watch the fire spread across the grid step by step. The simulation continues until there are no burning trees left.<br><br>
+
 For the model code, I originally struggled getting the model to use the data thats being read live from the sensors. At the beginnig i was trying to run the model from the same file the data was being read from however I couldnt get this to work so I ended up getting the model to read the values from the CSV file and after that the model woked pefectly.
 </p>
 
@@ -219,7 +243,7 @@ import serial
 #creats the 2D grid
 WIDTH = 20
 HEIGHT = 20
-forest = [["T" for i in range (HEIGHT)] for i in range(WIDTH)]
+forest = [["🌲" for i in range (HEIGHT)] for i in range(WIDTH)]
 #variables
 ser = serial.Serial("COM14", 115200)
 time.sleep(3)
@@ -260,7 +284,7 @@ def getNeighbours(x,y):
 
 
 #makes the center of the 2D list tree on fire 
-forest [HEIGHT//2][WIDTH//2] = "F"
+forest [HEIGHT//2][WIDTH//2] = "🔥"
 
 while True:
     Flame, Temperature, soilMoisture, airHumidity = getValues()
@@ -268,22 +292,22 @@ while True:
     for x in range (HEIGHT):
         for y in range (WIDTH):
             #sets burning trees to burnt
-            if forest[x][y] == "F":
+            if forest[x][y] == "🔥":
                 newForest[x][y] = "."
             #if the tree isnt on fire the neighbouring trees are checked to see if they are burning, if they are the their is a chance for this one to catch on fire 
-            elif forest [x][y] == "T":
+            elif forest [x][y] == "🌲":
                 neighbours = getNeighbours(x,y)
                 #calculates the fire chance
-                if any (forest[x][y] == "F" for x,y  in neighbours):
+                if any (forest[x][y] == "🔥" for x,y  in neighbours):
                     fireChance=random.random()
                     realFire = 0
                     realFire += (Temperature / 40) * 0.4 
                     realFire += (1 - airHumidity / 100) * 0.3  
                     realFire += (1 - soilMoisture / 100) * 0.3  
                     realFire = max(0, min(realFire, 1))   
-                    if fireChance > realFire:
-                        newForest[x][y] = "F" 
-    if not any("F" in row for row in forest):
+                    if fireChance < realFire:
+                        newForest[x][y] = "🔥" 
+    if not any("🔥" in row for row in forest):
         printForest(forest)
         break
     #prints the updated forest and sets the new forest to the original one
@@ -296,7 +320,6 @@ while True:
 
     #wait one second before printing again
     time.sleep(1)
-
 </code></pre>
 
 </section>
@@ -467,5 +490,7 @@ while True:
 <td>Fail</td>
 </tr>
 </table>
+<h3 class="w3-padding-64"><b>A Problem I faced</b></h3>
+<p>The biggest problem I faced throughout the entire project was getting my model to read live values from the Micro:bit sensors and then use those values correctly in the simulation. At first, it was difficult to connect the serial data from the Micro:bit to the Python program in a way that was reliable. I had to make sure the sensor values were being sent in the right order, read properly by Python, and converted into percentages before the model could use them. I solved this by, instead of trying to get the model to read the data from the sensors themselves, I had the model read the data collected in the CSV file. Once this was solved the model was able to use the real sensor readings such (temperature, air humidity, and soil moisture) to control how the fire spread in the model.</p>
 </body>
 </html>

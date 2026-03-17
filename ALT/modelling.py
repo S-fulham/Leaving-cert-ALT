@@ -70,7 +70,7 @@ while True:
                     realFire += (1 - airHumidity / 100) * 0.3  
                     realFire += (1 - soilMoisture / 100) * 0.3  
                     realFire = max(0, min(realFire, 1))   
-                    if fireChance > realFire:
+                    if fireChance < realFire:
                         newForest[x][y] = "🔥" 
     if not any("🔥" in row for row in forest):
         printForest(forest)
