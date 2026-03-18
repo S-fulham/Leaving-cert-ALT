@@ -4,7 +4,7 @@ import time
 
 
 ser = serial.Serial("COM14", 115200)
-time.sleep(3)
+time.sleep(5)
 
 
 with open("log.csv", "w") as file:

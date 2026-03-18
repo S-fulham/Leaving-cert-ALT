@@ -294,7 +294,8 @@ while True:
             #sets burning trees to burnt
             if forest[x][y] == "🔥":
                 newForest[x][y] = "."
-            #if the tree isnt on fire the neighbouring trees are checked to see if they are burning, if they are the their is a chance for this one to catch on fire 
+            #if the tree isnt on fire the neighbouring trees are checked to see if they are burning, 
+            if they are the their is a chance for this one to catch on fire 
             elif forest [x][y] == "🌲":
                 neighbours = getNeighbours(x,y)
                 #calculates the fire chance
