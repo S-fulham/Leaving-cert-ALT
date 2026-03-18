@@ -12,11 +12,6 @@ forest = [["🌲" for i in range (HEIGHT)] for i in range(WIDTH)]
 #variables
 ser = serial.Serial("COM14", 115200)
 time.sleep(3)
-Flame = 0
-Temperature = 0 
-soilMoisture = 0
-airHumidity = 0
-moistureLevel = 0
 
 # gets values from the sensors they're returned in list so I have to strip them to get the values to run the model
 def getValues():
@@ -66,6 +61,7 @@ while True:
                 if any (forest[x][y] == "🔥" for x,y  in neighbours):
                     fireChance=random.random()
                     realFire = 0
+                    soilMoisture = 75
                     realFire += (Temperature / 40) * 0.4 
                     realFire += (1 - airHumidity / 100) * 0.3  
                     realFire += (1 - soilMoisture / 100) * 0.3  
@@ -78,7 +74,7 @@ while True:
     #prints the updated forest and sets the new forest to the original one
     printForest(forest)
     forest=newForest
-    print ("This is the moisture level ", moistureLevel)
+    print ("This is the moisture level ", soilMoisture)
     print ("This is the temperature ",Temperature)
     print ("This is the air humidity level ",airHumidity)
     print ("This is the the chance of a fire starting level ",realFire)
