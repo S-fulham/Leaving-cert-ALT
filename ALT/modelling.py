@@ -52,7 +52,7 @@ def getNeighbours(x,y):
 forest [HEIGHT//2][WIDTH//2] = "🔥"
 
 while True:
-    Flame, Temperature, soilMoisture, airHumidity = getValues()
+    Temperature, soilMoisture, airHumidity = getValues()
     newForest = copy.deepcopy(forest)
     for x in range (HEIGHT):
         for y in range (WIDTH):

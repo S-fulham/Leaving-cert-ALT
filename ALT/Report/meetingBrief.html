@@ -48,7 +48,7 @@ style="width:100%;font-size:22px">Close Menu</a>
         .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
         .w3-half img:hover{opacity:1}
         </style>
-    <h3 class="w3-padding-64"><b>Basic Requirments</b></h3>
+    <h3 class="w3-padding-20"><b>Basic Requirments</b></h3>
     <style>
       table,
       th,
@@ -131,4 +131,7 @@ style="width:100%;font-size:22px">Close Menu</a>
               <td><b>Yes</b> - My system includes multiple responses depending on the data recieved by the sensors including water pump turning on if fire is detected and not turning off until the fire is no longer detected, water pump turning on for three seconds if moisture level is low, LED turning on if temperature is high. </td>
           </tr>
       </table>
+      <p><b>For the basic requirements:</b> I developed a functional embedded system using a Microbit that incorporates both digital and analogue inputs. The system uses a fire sensor as a digital input and a soil moisture sensor as an analogue input. Based on the data received, the system produces outputs such as activating an LED when soil moisture is low. The system is capable of operating automatically once started. In addition, it collects and stores environmental data including temperature, soil moisture, air humidity, and flame detection. I also simulated a real-world process by creating drought conditions, where the system responded appropriately by activating a warning LED and automatically turning on a water pump.<br><br>
+
+        <b>For the advanced requirements:</b> I created a disaster risk model in Python focused on wildfire prediction. This model uses data collected from the embedded system, such as temperature and soil moisture, along with additional factors like air humidity to calculate the likelihood of fire starting or spreading. I carried out “what-if” simulations by adjusting key variables such as temperature and moisture levels to observe how wildfire risk changes under different conditions. Furthermore, I implemented an adaptive system that responds automatically to environmental changes. For example, the system activates a water pump when fire is detected or when soil moisture is too low, and it triggers visual alerts when temperature levels are high, demonstrating a feedback mechanism that adapts to real-time conditions.</p>
   </div>
