@@ -493,7 +493,7 @@ while True:
 </table>
 <br><br><h3 class="w3-padding-20"><b>A Problem I faced</b></h3>
 <p>The biggest problem I faced throughout the entire project was getting my model to read live values from the Micro:bit sensors and then use those values correctly in the simulation. 
-  At first, it was difficult to connect the serial data from the Micro:bit to the Python program in a way that was reliable. I had to make sure the sensor values were being sent in the right order, 
+  At first, I was unable to connect the serial data from the Micro:bit to the Python program in a way that was reliable. I had to make sure the sensor values were being sent in the right order, 
   read properly by Python, and converted into percentages before the model could use them. I solved this by, instead of trying to get the model to read the data from the sensors themselves, 
   I had the model read the data collected in the CSV file. Once this was solved the model was able to use the real sensor readings such (temperature, air humidity, and soil moisture) to control how the fire spread in the model. - here is the code that fixed it.</p>
   <img src="Code.png"><br><br><br><br>
